@@ -227,6 +227,6 @@ class SidebarManager {
 }
 
 // Initialize sidebar when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('includesLoaded', function() {
     new SidebarManager();
 });

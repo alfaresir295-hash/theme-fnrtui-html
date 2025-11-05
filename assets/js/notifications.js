@@ -129,6 +129,6 @@ class NotificationsManager {
 }
 
 // Initialize notifications manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('includesLoaded', function() {
     new NotificationsManager();
 });

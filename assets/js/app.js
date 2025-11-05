@@ -3,24 +3,55 @@
  */
 
 // Main application initialization
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     // Initialize charts
-    if (typeof initializeCharts === 'function') {
-        initializeCharts();
+    try {
+        if (typeof initializeCharts === 'function') {
+            initializeCharts();
+        }
+    } catch (e) {
+        console.error(`Failed to initialize charts: ${e}`)
     }
 
+
     // Initialize table data
-    if (typeof initializePaymentsTable === 'function') {
-        initializePaymentsTable();
+    try {
+        if (typeof initializePaymentsTable === 'function') {
+            initializePaymentsTable();
+        }
+    } catch (e) {
+        console.error(`Failed to initialize payments table: ${e}`)
     }
 
     // Add interactivity
-    if (typeof addEventListeners === 'function') {
-        addEventListeners();
+    try {
+        if (typeof addEventListeners === 'function') {
+            addEventListeners();
+        }
+    } catch (e) {
+        console.error(`Failed to add event listener: ${e}`)
+    }
+
+    try {
+        await includeHTML()
+    } catch (e) {
+        console.error(`Failed to include html tags: ${e}`)
     }
 
     console.log('Dashboard application initialized successfully');
 });
+
+async function includeHTML() {
+    const els = document.querySelectorAll("[include-html]");
+    for (const el of els) {
+      const url = el.getAttribute("include-html");
+      const res = await fetch(url);
+      if (!res.ok) { el.innerHTML = ""; continue; }
+      el.innerHTML = await res.text();
+    }
+
+    document.dispatchEvent(new Event("includesLoaded"));
+}
 
 // Global utility functions
 window.DashboardApp = {

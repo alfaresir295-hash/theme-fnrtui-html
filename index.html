@@ -5,47 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>fnrt UI Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        'sans': ['PT Sans', 'PT Sans Fallback', 'system-ui', 'sans-serif'],
-                    },
-                    colors: {
-                        border: "hsl(214.3 31.8% 91.4%)",
-                        input: "hsl(214.3 31.8% 91.4%)",
-                        ring: "hsl(222.2 84% 4.9%)",
-                        background: "hsl(0 0% 100%)",
-                        foreground: "hsl(222.2 84% 4.9%)",
-                        primary: {
-                            DEFAULT: "hsl(222.2 47.4% 11.2%)",
-                            foreground: "hsl(210 40% 98%)",
-                        },
-                        secondary: {
-                            DEFAULT: "hsl(210 40% 96%)",
-                            foreground: "hsl(222.2 84% 4.9%)",
-                        },
-                        muted: {
-                            DEFAULT: "hsl(210 40% 96%)",
-                            foreground: "hsl(215.4 16.3% 46.9%)",
-                        },
-                        accent: {
-                            DEFAULT: "hsl(210 40% 96%)",
-                            foreground: "hsl(222.2 84% 4.9%)",
-                        },
-                    },
-                }
-            }
-        }
-    </script>
     <style>
         /* Custom animations for complex transitions */
         @keyframes submenu-show {

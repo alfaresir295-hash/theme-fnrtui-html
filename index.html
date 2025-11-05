@@ -245,20 +245,6 @@
         </main>
     </div>
 
-    <script>
-      async function includeHTML() {
-        const els = document.querySelectorAll("[include-html]");
-        for (const el of els) {
-          const url = el.getAttribute("include-html");
-          const res = await fetch(url);
-          if (!res.ok) { el.innerHTML = ""; continue; }
-          el.innerHTML = await res.text();
-        }
-
-        document.dispatchEvent(new Event("includesLoaded"));
-      }
-      includeHTML();
-    </script>
     <!-- JavaScript Modules -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/charts.js"></script>

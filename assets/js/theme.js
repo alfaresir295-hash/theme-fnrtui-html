@@ -56,6 +56,6 @@ class ThemeManager {
 }
 
 // Initialize theme manager when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('includesLoaded', function() {
     new ThemeManager();
 });

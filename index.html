@@ -12,31 +12,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js">
     <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        /* Custom animations for complex transitions */
-        @keyframes submenu-show {
-            from { max-height: 0; opacity: 0; }
-            to { max-height: 500px; opacity: 1; }
-        }
-        
-        @keyframes submenu-hide {
-            from { max-height: 500px; opacity: 1; }
-            to { max-height: 0; opacity: 0; }
-        }
-        
-        .submenu-show {
-            animation: submenu-show 0.3s ease-in-out forwards;
-        }
-        
-        .submenu-hide {
-            animation: submenu-hide 0.3s ease-in-out forwards;
-        }
-
-        /* Sidebar badges */
-        .sidebar-badge {
-            transition: all 0.3s ease-in-out;
-        }
-    </style>
 </head>
 <body class="bg-gray-50 dark:bg-gray-900 font-inter antialiased transition-colors duration-200">
     <div class="flex h-screen overflow-hidden p-4 gap-4">
@@ -272,15 +247,15 @@
 
     <script>
       async function includeHTML() {
-        const els = document.querySelectorAll('[include-html]');
+        const els = document.querySelectorAll("[include-html]");
         for (const el of els) {
-          const url = el.getAttribute('include-html');
+          const url = el.getAttribute("include-html");
           const res = await fetch(url);
-          if (!res.ok) { el.innerHTML = ''; continue; }
+          if (!res.ok) { el.innerHTML = ""; continue; }
           el.innerHTML = await res.text();
         }
 
-        document.dispatchEvent(new Event('includesLoaded'));
+        document.dispatchEvent(new Event("includesLoaded"));
       }
       includeHTML();
     </script>
